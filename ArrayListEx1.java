@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.*;
 
 public class ArrayListEx1 {
     public static void main(String[] args){
@@ -56,6 +57,20 @@ public class ArrayListEx1 {
             System.out.println("\nArray list is empty.");
         }
 
+        ArrayList<Integer> ial = new ArrayList<> ();
+        ial.add(59);
+        ial.add(46);
+        ial.add(19);
+        ial.add(72);
+        ial.add(5);
+        System.out.println("Before sorting array list: " + ial);
+        Collections.sort(ial);
+        System.out.println("After sorting array list: " + ial);
 
+        Collections.shuffle(ial);
+        System.out.println("After shuffling array list: " + ial);
+
+        Collections.reverse(ial);
+        System.out.println("After reversing array list: " + ial);
     }
 }
