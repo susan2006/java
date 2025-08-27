@@ -1,0 +1,8 @@
+public class ReplaceDigits {
+    public static void main(String[] args) {
+        String str = "My phone number is 9876543210";
+        String replaced = str.replaceAll("\\d", "*");
+
+        System.out.println("After replacement: " + replaced);
+    }
+}
