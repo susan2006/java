@@ -1,0 +1,12 @@
+import java.util.regex.*;
+
+public class ContainsThe {
+    public static void main(String[] args) {
+        String str = "The quick brown fox";
+        boolean found = Pattern.compile("the", Pattern.CASE_INSENSITIVE)
+                               .matcher(str)
+                               .find();
+
+        System.out.println("Contains 'the'? " + found);
+    }
+}
