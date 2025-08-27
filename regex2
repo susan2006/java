@@ -1,0 +1,10 @@
+import java.util.regex.*;
+
+public class ContainsDigit {
+    public static void main(String[] args) {
+        String str = "Hello123";
+        boolean found = Pattern.compile(".*\\d.*").matcher(str).matches();
+
+        System.out.println("Contains digit? " + found);
+    }
+}
