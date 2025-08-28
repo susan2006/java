@@ -1,0 +1,17 @@
+import java.io.FileOutputStream;
+
+public class FileEx3 {
+    public static void main(String[] a){
+        try{
+            FileOutputStream fos = new FileOutputStream("mydata.txt",true);
+            String str = " This is appended text.";
+            byte[] ba = str.getBytes();
+            fos.write(ba);
+            System.out.println("Successfully appended text to the existing file.");
+            fos.close();
+        }
+        catch(Exception e){
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
