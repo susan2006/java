@@ -1,0 +1,16 @@
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
+public class DT2 {
+    public static void main(String[] args) {
+        // Define the start and end dates (start of the years)
+        LocalDate startDate = LocalDate.of(2017, 1, 1);
+        LocalDate endDate = LocalDate.of(2022, 1, 1);
+
+        // Calculate the number of days between the two dates
+        long daysBetween = ChronoUnit.DAYS.between(startDate, endDate);
+
+        // Print the result
+        System.out.println("Days between the years 2017 & 2022 is: " + daysBetween);
+    }
+}
