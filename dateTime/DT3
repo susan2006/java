@@ -1,0 +1,12 @@
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
+public class DateDifference {
+    public static void main(String[] args) {
+        LocalDate startDate = LocalDate.of(2025, 7, 3);
+        LocalDate endDate = LocalDate.of(2023, 8, 15);
+
+        long daysBetween = ChronoUnit.DAYS.between(startDate, endDate);
+        System.out.println("Days between: " + daysBetween);
+    }
+}
