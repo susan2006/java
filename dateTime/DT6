@@ -1,0 +1,11 @@
+import java.time.LocalDateTime;
+
+public class DateTimeBefore {
+    public static void main(String[] args) {
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime before = now.minusHours(5).minusMinutes(30);
+
+        System.out.println("Current: " + now);
+        System.out.println("Before 5 hours 30 mins: " + before);
+    }
+}
