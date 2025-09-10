@@ -1,0 +1,21 @@
+import java.util.Random;
+
+public class RN4 {
+    public static void main(String[] a){
+        Random r = new Random();
+        int[] array = new int[100];
+        int count = 0;
+
+        while(count < 20){
+            int number = r.nextInt(1,11);
+            if(number % 2 == 0){
+                array[count] = number;
+                count++;
+            }
+        }
+
+        for(int i = 0; i < 20; i++){
+            System.out.print(array[i] + "  ");
+        }
+    }
+}
