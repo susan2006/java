@@ -1,0 +1,50 @@
+import java.util.Random;
+
+public class PasswordGenerator {
+
+    public static void main(String[] args) {
+        // Define the character sets
+        final String LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
+        final String UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        final String DIGITS = "0123456789";
+        final String SPECIAL_CHARS = "!@#$%^&*()-_+=<>?";
+
+        // Specify the desired password length
+        System.out.print("Enter length: ");
+        int length = 
+
+        if (length < 4) {
+            System.out.println("Password length must be at least 4 to include all character types.");
+            return;
+        }
+
+        Random random = new Random();
+        char[] passwordChars = new char[length];
+
+        // Ensure the password includes at least one of each character type
+        passwordChars[0] = LOWERCASE.charAt(random.nextInt(LOWERCASE.length()));
+        passwordChars[1] = UPPERCASE.charAt(random.nextInt(UPPERCASE.length()));
+        passwordChars[2] = DIGITS.charAt(random.nextInt(DIGITS.length()));
+        passwordChars[3] = SPECIAL_CHARS.charAt(random.nextInt(SPECIAL_CHARS.length()));
+
+        // Combine all character sets for the remaining characters
+        String allChars = LOWERCASE + UPPERCASE + DIGITS + SPECIAL_CHARS;
+
+        // Fill the rest of the password length with random characters from the combined set
+        for (int i = 4; i < length; i++) {
+            passwordChars[i] = allChars.charAt(random.nextInt(allChars.length()));
+        }
+
+        // Shuffle the characters in the array to randomize their positions
+        for (int i = 0; i < length; i++) {
+            int randomIndexToSwap = random.nextInt(length);
+            char temp = passwordChars[randomIndexToSwap];
+            passwordChars[randomIndexToSwap] = passwordChars[i];
+            passwordChars[i] = temp;
+        }
+
+        // Convert the character array back to a string
+        String password = new String(passwordChars);
+        System.out.println("Generated Password: " + password);
+    }
+}
