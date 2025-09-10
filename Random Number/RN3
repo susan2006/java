@@ -1,0 +1,20 @@
+import java.util.Random;
+
+public class RN3 {
+    public static void main(String[] a){
+        Random r = new Random();
+        int countHead = 0, countTail = 0;
+
+        for(int i = 0; i < 10; i++){
+            int coin = r.nextInt(0, 2);  // 0 for head and 1 for tail
+            if(coin == 0){
+                countHead++;
+            }
+            else{
+                countTail++;
+            }
+        }
+
+        System.out.print("Heads count: " + countHead + " Tails count: " + countTail);
+    }
+}
