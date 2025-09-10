@@ -2,17 +2,27 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
-public class FileEx4 {
-    public static void main(String a[]){
-        try{
-            FileInputStream fis = new FileInputStream("source.txt");
-            FileOutputStream fos = new FileOutputStream("destination.txt");
-            BufferedInputStream bis = new BufferedInputStream(fis);
-            BufferedOutputStream bos = new BufferedOutputStream(fos);
-        }
-        catch(Exception e){
-            System.out.println("Error: " + e.getMessage());
+public class FileCopyBuffered {
+    public static void main(String[] args) {
+        String sourceFile = "source.txt";
+        String destinationFile = "destination.txt";
+
+        try (
+            BufferedInputStream bis = new BufferedInputStream(new FileInputStream(sourceFile));
+            BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(destinationFile))
+        ) {
+            byte[] buffer = new byte[1024]; // 1KB buffer
+            int bytesRead;
+
+            while ((bytesRead = bis.read(buffer)) != -1) {
+                bos.write(buffer, 0, bytesRead);
+            }
+
+            System.out.println("File copied successfully.");
+        } catch (IOException e) {
+            System.out.println("Error during file copy: " + e.getMessage());
         }
     }
 }
