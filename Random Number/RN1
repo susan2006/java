@@ -1,0 +1,14 @@
+import java.util.Random;
+
+public class RN1 {
+    public static void main(String[] a){
+        Random r = new Random();
+
+        int die1 = r.nextInt(1,7);
+        int die2 = r.nextInt(1,7);
+
+        System.out.println("Die 1: " + die1);
+        System.out.println("Die 2: " + die2);
+        System.out.println("Sum: " + (die1 + die2));
+    }
+}
