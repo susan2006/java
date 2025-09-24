@@ -1,0 +1,37 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.File;
+
+public class ImageViewer extends JFrame implements ActionListener {
+    JLabel imageLabel;
+    JButton browse;
+
+    public ImageViewer() {
+        setTitle("Image Viewer");
+        setSize(600, 400);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
+
+        imageLabel = new JLabel("", JLabel.CENTER);
+        browse = new JButton("Browse");
+
+        add(browse, BorderLayout.SOUTH);
+        add(imageLabel, BorderLayout.CENTER);
+
+        browse.addActionListener(this);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        JFileChooser chooser = new JFileChooser();
+        if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+            File file = chooser.getSelectedFile();
+            ImageIcon icon = new ImageIcon(file.getAbsolutePath());
+            imageLabel.setIcon(icon);
+        }
+    }
+
+    public static void main(String[] args) {
+        new ImageViewer().setVisible(true);
+    }
+}
