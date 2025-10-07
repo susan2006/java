@@ -1,0 +1,23 @@
+import java.util.*;
+class Student {
+    String name;
+    int age;
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    @Override
+    public String toString() {
+        return name + " (" + age + ")";
+    }
+}
+public class StudentSorting{
+    public static void main(String[] args) {
+        List<Student> students = new ArrayList<>();
+        students.add(new Student("Alice", 22));
+        students.add(new Student("Bob", 20));
+        students.add(new Student("Charlie", 24));
+        students.sort(Comparator.comparingInt(student -> student.age));
+        System.out.println("Sorted Students by Age: " + students);
+    }
+}
