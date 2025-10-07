@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class Q6 {
+    public static void main(String[] args) {
+        HashMap<String, Integer> products = new HashMap<>();
+        products.put("Guava", 15);
+        products.put("Mango", 9);
+        products.put("Cherry", 30);
+        products.put("Custard Apple", 5);
+    
+        for (Map.Entry<String, Integer> e : products.entrySet()) {
+            if (e.getValue() > 10) {
+                System.out.println(e.getKey() + ": " + e.getValue());
+            }
+        }
+    }
+}
