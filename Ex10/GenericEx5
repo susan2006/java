@@ -1,0 +1,13 @@
+import java.util.*;
+
+public class Q5 {
+    public static <T> int countUnique(List<T> list) {
+        HashSet<T> set = new HashSet<>(list);
+        return set.size();
+    }
+
+    public static void main(String[] args) {
+        List<Integer> nums = Arrays.asList(1,2,2,3,3,4);
+        System.out.println("Unique Count: " + countUnique(nums)); // 4
+    }
+}
