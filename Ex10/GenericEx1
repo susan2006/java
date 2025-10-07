@@ -1,0 +1,17 @@
+public class GenericEx1 {
+    public static <T extends Comparable<T>> T findMaxInArray(T[] array) {
+        T max = array[0];
+        for (T element : array) {
+            if (element.compareTo(max) > 0) {
+                max = element;
+            }
+        }
+        return max;
+    }
+    public static void main(String[] args) {
+        Integer[] intArray = {1, 5, 3, 9, 2};
+        String[] strArray = {"apple", "banana", "cherry"};
+        System.out.println("Max in Integer array: " + findMaxInArray(intArray));
+        System.out.println("Max in String array: " + findMaxInArray(strArray));
+    }
+}
