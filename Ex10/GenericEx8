@@ -1,0 +1,20 @@
+import java.util.*;
+
+class MyStack<T> {
+    private ArrayList<T> stack = new ArrayList<>();
+
+    public void push(T item) { stack.add(item); }
+    public T pop() { return stack.isEmpty() ? null : stack.remove(stack.size()-1); }
+    public T peek() { return stack.isEmpty() ? null : stack.get(stack.size()-1); }
+    public boolean isEmpty() { return stack.isEmpty(); }
+}
+
+public class Q8 {
+    public static void main(String[] args) {
+        MyStack<Integer> st = new MyStack<>();
+        st.push(10); st.push(20); st.push(30);
+        System.out.println(st.peek()); // 30
+        System.out.println(st.pop());  // 30
+        System.out.println(st.isEmpty()); // false
+    }
+}
