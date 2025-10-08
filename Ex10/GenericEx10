@@ -1,0 +1,28 @@
+import java.util.*;
+class Person implements Comparable<Person> {
+    String name;
+    int age;
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    @Override
+    public int compareTo(Person other) {
+        return Integer.compare(this.age, other.age);
+    }
+    @Override
+    public String toString() {
+        return name + " (" + age + ")";
+    }
+}
+public class PersonList {
+    public static void main(String[] args) {
+        List<Person> people = new ArrayList<>();
+        people.add(new Person("Alice", 30));
+        people.add(new Person("Bob", 20));
+        people.add(new Person("Charlie", 25));
+        Collections.sort(people);
+        System.out.println("Sorted by Age: " + people);
+        people.stream().filter(person -> person.age > 25).forEach(System.out::println);
+    }
+}
