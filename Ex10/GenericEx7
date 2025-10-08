@@ -1,0 +1,12 @@
+import java.util.*;
+
+public class Q7 {
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        pq.add(50); pq.add(10); pq.add(30);
+
+        while (!pq.isEmpty()) {
+            System.out.println(pq.poll());  // 10, 30, 50
+        }
+    }
+}
